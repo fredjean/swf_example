@@ -3,7 +3,7 @@ domain = SimplerWorkflow::Domain.domains("my-test-domain") do
   # Register hello activity.
   hello = register_activity(:hello, '1.0.0') do
     on_fail :abort
-    next_activity :record, "1.0.0"
+    on_success :record, "1.0.0"
 
     perform_activity do |task|
       greeting = task.input
