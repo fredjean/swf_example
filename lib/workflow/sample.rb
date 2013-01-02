@@ -28,7 +28,7 @@ domain = SimplerWorkflow::Domain.domains("my-test-domain") do
   record.start_activity_loop
 
 
-  decision = register_workflow(:hello_world, "1.0.0") do
+  decision = register_workflow("hello-world", "1.0.0") do
     initial_activity :hello, "1.0.0"
 
     on_activity_completed do |task, event|
