@@ -7,7 +7,7 @@ domain = SimplerWorkflow::Domain.domains("my-test-domain") do
 
     perform_activity do |task|
       greeting = task.input
-      task.results = {"message" => "Hello, #{greeting}" }
+      task.complete! "result" => "Hello, #{greeting}"
     end
   end
 
@@ -20,7 +20,7 @@ domain = SimplerWorkflow::Domain.domains("my-test-domain") do
 
     perform_activity do |task|
       message = task.input
-      puts message
+      logger.info ">>>>>>> #{message}"
     end
   end
 
