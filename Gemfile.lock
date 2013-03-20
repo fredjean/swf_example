@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/fredjean/simpler_workflow.git
-  revision: 88f5df25d026ea903ed604e7361d84db26ceac89
+  revision: 5eb6a821495ebcb055cedad2beb9b04d29fe25b8
   specs:
     simpler_workflow (0.3.0)
       aws-sdk
