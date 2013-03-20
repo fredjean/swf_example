@@ -33,11 +33,11 @@ domain = SimplerWorkflow::Domain.domains("my-test-domain") do
 
     on_activity_completed do |task, event|
       completed_event = scheduled_event(task, event)
-      case conpleted_event.attributes.activity_type.name
+      case completed_event.attributes.activity_type.name
       when "hello"
-        task.schedule_activity_task record.to_activity_type, :input => completed_event.results
+        task.schedule_activity_task record.to_activity_type, :input => event.attributes.result
       when "record"
-        task.complete_workflow :result => 'success'
+        task.complete_workflow_execution :result => 'success'
       end
     end
   end
