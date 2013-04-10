@@ -7,6 +7,6 @@ end
 namespace :swf do
   desc "Fire off the sample workflow"
   task :fire => :environment do
-    SimplerWorkflow::Domain["my-test-domain"].start_workflow("hello-world", "1.0.0", "AWS")
+    SimplerWorkflow::Domain["my-test-domain"].start_workflow("hello-world", "1.0.1", "AWS")
   end
 end
